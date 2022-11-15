@@ -1,11 +1,35 @@
+:root {
+    --cor-primaria: #e21;
+    --cor-primaria-escura: #900;
+    --fundo-1: #f7f7f7;
+    --fundo-2: #fff;
+    --texto: #000;
+    --subtitulo: rgba(0,0,0,0.2);
+    --onda-detalhe: url("../img/onda-clara.svg");
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+    --cor-primaria: #e21;
+    --cor-primaria-escura: #900;
+    --fundo-1: #111;
+    --fundo-2: #000;
+    --texto: #fff;
+    --subtitulo: rgba(255,255,255,0.2);
+    --onda-detalhe: url("../img/onda-escura.svg");
+    }
+}
+
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
-    background-color: #f7f7f7;
+    background-color: var(--fundo-1);
     display: grid;
     gap: 60px;
     justify-items: center;
     margin-top: 60px;
+    color: var(--texto);
 }
 
 img {
@@ -14,6 +38,7 @@ img {
 
 a {
     text-decoration: none;
+    color: var(--texto);
 }
 
 ul {
@@ -52,16 +77,17 @@ p {
 
 .menu a {
     display: block;
-    background-color: #ffffff;
+    background-color: var(--fundo-2);
     padding: 1rem 2rem;
     border-radius: 4px;
-    color: #000;
+    color: var(--texto);
     text-transform: uppercase;
     border: 2px solid transparent;
+    color: var(--texto);
 }
 
 .menu a:hover {
-    border: 2px solid #e21;
+    border: 2px solid var(--cor-primaria);
 }
 
 .conteudo {
@@ -71,7 +97,7 @@ p {
 }
 
 .introducao {
-    background-color: #ffffff;
+    background-color: var(--fundo-2);
     padding: 40px;
     text-align: right;
     position: relative;
@@ -89,15 +115,15 @@ p {
     content: '';
     width: 60px;
     height: 4px;
-    background-color: #e21;
+    background-color: var(--cor-primaria);
     position: absolute;
     top: 30px;
     right: -30px;
 }
 
 .botao {
-    background-color: #e21;
-    color: #ffffff;
+    background-color: var(--cor-primaria);
+    color: #fff;
     padding: 1rem 2rem;
     border-radius: 4px;
     text-transform: uppercase;
@@ -105,7 +131,7 @@ p {
 }
 
 .botao:hover {
-    background-color: #900;
+    background-color: var(--cor-primaria-escura);
 }
 
 #bicicletaimg img {
@@ -114,15 +140,15 @@ p {
 }
 
 .area-subtitulo{
-    background-image: url("../img/ondas.svg");
-    background-position: center;
+    background-image: var(--onda-detalhe);
+    background-position: center top;
     display: grid;
 }
 
 .subtitulo {
     font-size: 4rem;
     text-transform: uppercase;
-    color: rgba(0, 0, 0, .3);
+    color: var(--subtitulo);
     text-align: right;
     padding: 2.5rem;
     align-self: center;
@@ -130,7 +156,7 @@ p {
 }
 
 .vantagens {
-    background-color: #ffffff;
+    background-color: var(--fundo-2);
     padding: 2.5rem;
 
 }
@@ -143,11 +169,11 @@ p {
 }
 
 .vantagens-item:hover{
-    border-left: 4px solid #e21;
+    border-left: 4px solid var(--cor-primaria);
 }
 
 .vantagens-item:nth-child(odd) {
-    background-color: #f7f7f7;
+    background-color: var(--fundo-1);
 }
 
 .vantagens-item p {
@@ -155,7 +181,7 @@ p {
 }
 
 .rodape {
-    background-color: #ffffff;
+    background-color: var(--fundo-2);
     width: 100%;
     text-align: center;
     padding: 2.5rem;
